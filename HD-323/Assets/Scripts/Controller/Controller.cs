@@ -192,9 +192,9 @@ public class Controller : MonoBehaviour
                         hawk1.energy = hawk1.energy + foodValueInt - baseReqInt;
                     }
                 }
-                int r3 = Random.Range(1, foods.Count )-1;
-                GameObject.DestroyImmediate(foods[r3]);
-                foods.RemoveAt(0);
+                int r = Random.Range(1, foods.Count )-1;
+                GameObject.DestroyImmediate(foods[r]);
+                foods.RemoveAt(r);
             }
             else
             {
