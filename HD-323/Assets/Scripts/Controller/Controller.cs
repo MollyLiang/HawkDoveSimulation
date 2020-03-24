@@ -218,6 +218,7 @@ public class Controller : MonoBehaviour
 
         int hnumber = 0;
         int dnumber = 0;
+        int fnumber = 0;
         int item = 0;
         foreach (GameObject hd in GameObject.FindObjectsOfType(typeof(GameObject)))
         {
@@ -228,6 +229,10 @@ public class Controller : MonoBehaviour
             if (hd.name == "Dove(Clone)")
             {
                 dnumber++;
+            }
+            if (hd.name == "Food(Clone)"|| hd.name =="Food")
+            {
+                fnumber++;
             }
         }
 
@@ -241,13 +246,13 @@ public class Controller : MonoBehaviour
             {
                 m_DataDiagram.InputPoint(line, new Vector2(1,(float)(hnumber/10.0)));
             }
-            if(item==1)
+            else if(item==1)
             {
                 m_DataDiagram.InputPoint(line, new Vector2(1, (float)(dnumber/10.0)));
             }
-            if(item==2)
+            else
             {
-                m_DataDiagram.InputPoint(line, new Vector2(1, (float)((hnumber+dnumber)/10.0)));
+                m_DataDiagram.InputPoint(line, new Vector2(1, (float)(fnumber/10.0)));
             }
             item++;
         }
